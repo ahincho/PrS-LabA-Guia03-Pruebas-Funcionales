@@ -76,6 +76,14 @@ public class MultiplyCheckerTest {
             { new BigInteger("12000"), new BigInteger("-1"), new BigInteger("-12000") },
             { new BigInteger("13000"), new BigInteger("-17000"), new BigInteger("-221000000") },
             { new BigInteger("14000"), new BigInteger("-18000000"), new BigInteger("-252000000000") },
+            // A = Large Positive and B = { Large Positive, Small Positive, 1, 0, -1, Small Negative, Large Negative }
+            { new BigInteger("20000000"), new BigInteger("19000000"), new BigInteger("380000000000000") },
+            { new BigInteger("30000000"), new BigInteger("20000"), new BigInteger("600000000000") },
+            { new BigInteger("40000000"), new BigInteger("1"), new BigInteger("40000000") },
+            { new BigInteger("50000000"), new BigInteger("0"), new BigInteger("0") },
+            { new BigInteger("60000000"), new BigInteger("-1"), new BigInteger("-60000000") },
+            { new BigInteger("70000000"), new BigInteger("-21000"), new BigInteger("-1470000000000") },
+            { new BigInteger("80000000"), new BigInteger("-22000000"), new BigInteger("-1760000000000000") },
         });
     }
     @Test
