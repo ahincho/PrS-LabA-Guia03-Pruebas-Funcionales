@@ -20,11 +20,15 @@ public class MultiplyCheckerTest {
     public void initialize() {
         this.multiplyChecker = new MultiplyChecker();
     }
+    // Cada parametro debe colocarse como argumento aqui.
+    // Cada vez que el trigger se dispara, pasara los argumentos a partir
+    // de los parametros que definimos en el metodo multiply()
     public MultiplyCheckerTest(BigInteger a, BigInteger b, BigInteger expected) {
         this.a = a;
         this.b = b;
         this.expected = expected;
     }
+    // Se crean 49 casos de pruebas debido a que existe 7 particiones para A y tambien 7 particiones para B
     @Parameterized.Parameters
     public static Collection<Object[]> multipliedNumbers() {
         return Arrays.asList(new Object[][] {
@@ -86,6 +90,7 @@ public class MultiplyCheckerTest {
             { new BigInteger("80000000"), new BigInteger("-22000000"), new BigInteger("-1760000000000000") },
         });
     }
+    // Esta prueba se ejecutara 49 veces
     @Test
     public void testMultiplyNumberChecker() {
         System.out.println("Parameterized Multiply : " + this.a + " * " + this.b + " = " + this.expected);
