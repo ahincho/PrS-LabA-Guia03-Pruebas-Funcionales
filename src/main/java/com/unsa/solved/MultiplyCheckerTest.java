@@ -52,6 +52,14 @@ public class MultiplyCheckerTest {
             { new BigInteger("-1"), new BigInteger("-1"), new BigInteger("1") },
             { new BigInteger("-1"), new BigInteger("-5000"), new BigInteger("5000") },
             { new BigInteger("-1"), new BigInteger("-6000000"), new BigInteger("6000000") },
+            // A = 0 and B = { Large Positive, Small Positive, 1, 0, -1, Small Negative, Large Negative }
+            { new BigInteger("0"), new BigInteger("7000000"), new BigInteger("0") },
+            { new BigInteger("0"), new BigInteger("8000"), new BigInteger("0") },
+            { new BigInteger("0"), new BigInteger("1"), new BigInteger("0") },
+            { new BigInteger("0"), new BigInteger("0"), new BigInteger("0") },
+            { new BigInteger("0"), new BigInteger("-1"), new BigInteger("0") },
+            { new BigInteger("0"), new BigInteger("-9000"), new BigInteger("0") },
+            { new BigInteger("0"), new BigInteger("-10000000"), new BigInteger("0") },
         });
     }
     @Test
