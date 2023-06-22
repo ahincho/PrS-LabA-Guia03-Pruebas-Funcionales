@@ -60,6 +60,22 @@ public class MultiplyCheckerTest {
             { new BigInteger("0"), new BigInteger("-1"), new BigInteger("0") },
             { new BigInteger("0"), new BigInteger("-9000"), new BigInteger("0") },
             { new BigInteger("0"), new BigInteger("-10000000"), new BigInteger("0") },
+            // A = 1 and B = { Large Positive, Small Positive, 1, 0, -1, Small Negative, Large Negative }
+            { new BigInteger("1"), new BigInteger("11000000"), new BigInteger("11000000") },
+            { new BigInteger("1"), new BigInteger("12000"), new BigInteger("12000") },
+            { new BigInteger("1"), new BigInteger("1"), new BigInteger("1") },
+            { new BigInteger("1"), new BigInteger("0"), new BigInteger("0") },
+            { new BigInteger("1"), new BigInteger("-1"), new BigInteger("-1") },
+            { new BigInteger("1"), new BigInteger("-13000"), new BigInteger("-13000") },
+            { new BigInteger("1"), new BigInteger("-14000000"), new BigInteger("-14000000") },
+            // A = Small Positive and B = { Large Positive, Small Positive, 1, 0, -1, Small Negative, Large Negative }
+            { new BigInteger("8000"), new BigInteger("15000000"), new BigInteger("120000000000") },
+            { new BigInteger("9000"), new BigInteger("16000"), new BigInteger("144000000") },
+            { new BigInteger("10000"), new BigInteger("1"), new BigInteger("10000") },
+            { new BigInteger("11000"), new BigInteger("0"), new BigInteger("0") },
+            { new BigInteger("12000"), new BigInteger("-1"), new BigInteger("-12000") },
+            { new BigInteger("13000"), new BigInteger("-17000"), new BigInteger("-221000000") },
+            { new BigInteger("14000"), new BigInteger("-18000000"), new BigInteger("-252000000000") },
         });
     }
     @Test
