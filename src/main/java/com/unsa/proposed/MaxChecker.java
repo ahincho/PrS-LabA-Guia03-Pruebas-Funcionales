@@ -1,7 +1,9 @@
 package com.unsa.proposed;
 
+import java.math.BigInteger;
+
 public class MaxChecker {
-    public double max(double a, double b) {
-        return Math.max(a, b);
+    public BigInteger max(BigInteger a, BigInteger b) {
+        return a.max(b);
     }
 }
