@@ -1,7 +1,6 @@
 package com.unsa.proposed;
 
 import static org.junit.Assert.assertEquals;
-
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Collection;
@@ -31,7 +30,36 @@ public class MaxCheckerTest {
      @Parameterized.Parameters
     public static Collection<Object[]> multipliedNumbers() {
         return Arrays.asList(new Object[][] {
-            
+            // A = Large Negative and B = { Large Positive, Small Positive, 0, Small Negative, Large Negative }
+            { new BigInteger("-1000000"), new BigInteger("1000000"), new BigInteger("1000000") },
+            { new BigInteger("-2000000"), new BigInteger("2000"), new BigInteger("2000") },
+            { new BigInteger("-3000000"), new BigInteger("0"), new BigInteger("0") },
+            { new BigInteger("-4000000"), new BigInteger("-3000"), new BigInteger("-3000") },
+            { new BigInteger("-5000000"), new BigInteger("-4000000"), new BigInteger("-4000000") },
+            // A = Small Negative and B = { Large Positive, Small Positive, 0, Small Negative, Large Negative }
+            { new BigInteger("-6000"), new BigInteger("5000000"), new BigInteger("5000000") },
+            { new BigInteger("-7000"), new BigInteger("6000"), new BigInteger("6000") },
+            { new BigInteger("-8000"), new BigInteger("0"), new BigInteger("0") },
+            { new BigInteger("-9000"), new BigInteger("-7000"), new BigInteger("-7000") },
+            { new BigInteger("-10000"), new BigInteger("-8000000"), new BigInteger("-10000") },
+            // A = 0 and B = { Large Positive, Small Positive, 0, Small Negative, Large Negative }
+            { new BigInteger("0"), new BigInteger("9000000"), new BigInteger("9000000") },
+            { new BigInteger("0"), new BigInteger("10000"), new BigInteger("10000") },
+            { new BigInteger("0"), new BigInteger("0"), new BigInteger("0") },
+            { new BigInteger("0"), new BigInteger("-11000"), new BigInteger("0") },
+            { new BigInteger("0"), new BigInteger("-12000000"), new BigInteger("0") },
+            // A = Small Positive and B = { Large Positive, Small Positive, 0, Small Negative, Large Negative }
+            { new BigInteger("11000"), new BigInteger("13000000"), new BigInteger("13000000") },
+            { new BigInteger("12000"), new BigInteger("14000"), new BigInteger("14000") },
+            { new BigInteger("13000"), new BigInteger("0"), new BigInteger("13000") },
+            { new BigInteger("14000"), new BigInteger("-15000"), new BigInteger("14000") },
+            { new BigInteger("15000"), new BigInteger("-16000000"), new BigInteger("15000") },
+            // A = Large Positive and B = { Large Positive, Small Positive, 0, Small Negative, Large Negative }
+            { new BigInteger("17000000"), new BigInteger("50000000"), new BigInteger("50000000") },
+            { new BigInteger("1800000"), new BigInteger("28000"), new BigInteger("1800000") },
+            { new BigInteger("19000000"), new BigInteger("0"), new BigInteger("19000000") },
+            { new BigInteger("30000000"), new BigInteger("-29000"), new BigInteger("30000000") },
+            { new BigInteger("40000000"), new BigInteger("-30000000"), new BigInteger("40000000") }
         });
     }
     // Esta prueba se ejecutara 25 veces
