@@ -56,7 +56,7 @@ public class MaxCheckerTest {
             { new BigInteger("7").pow(40), new BigInteger("-7").pow(151), new BigInteger("7").pow(40) },
             // A = Large Positive and B = { Large Positive, Small Positive, 0, Small Negative, Large Negative }
             { new BigInteger("8").pow(120), new BigInteger("8").pow(120), new BigInteger("8").pow(120) },
-            { new BigInteger("8").pow(130), new BigInteger("8").pow(20), new BigInteger("8").pow(20) },
+            { new BigInteger("8").pow(130), new BigInteger("8").pow(20), new BigInteger("8").pow(130) },
             { new BigInteger("8").pow(150), new BigInteger("0"), new BigInteger("8").pow(150) },
             { new BigInteger("8").pow(170), new BigInteger("-8").pow(31), new BigInteger("8").pow(170) },
             { new BigInteger("8").pow(180), new BigInteger("-8").pow(131), new BigInteger("8").pow(180) }
