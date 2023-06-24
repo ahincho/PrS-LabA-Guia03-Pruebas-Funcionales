@@ -31,35 +31,37 @@ public class MaxCheckerTest {
     public static Collection<Object[]> multipliedNumbers() {
         return Arrays.asList(new Object[][] {
             // A = Large Negative and B = { Large Positive, Small Positive, 0, Small Negative, Large Negative }
-            { new BigInteger("-1000000"), new BigInteger("1000000"), new BigInteger("1000000") },
-            { new BigInteger("-2000000"), new BigInteger("2000"), new BigInteger("2000") },
-            { new BigInteger("-3000000"), new BigInteger("0"), new BigInteger("0") },
-            { new BigInteger("-4000000"), new BigInteger("-3000"), new BigInteger("-3000") },
-            { new BigInteger("-5000000"), new BigInteger("-4000000"), new BigInteger("-4000000") },
+            { new BigInteger("-2").pow(51), new BigInteger("2").pow(20), new BigInteger("-2").pow(71) },
+            { new BigInteger("-2").pow(61), new BigInteger("2").pow(60), new BigInteger("-2").pow(121) },
+            { new BigInteger("-2").pow(81), new BigInteger("0"), new BigInteger("0") },
+            { new BigInteger("-2").pow(101), new BigInteger("-2").pow(20), new BigInteger("-2").pow(121) },
+            { new BigInteger("-2").pow(111), new BigInteger("-2").pow(60), new BigInteger("-2").pow(171) },
             // A = Small Negative and B = { Large Positive, Small Positive, 0, Small Negative, Large Negative }
-            { new BigInteger("-6000"), new BigInteger("5000000"), new BigInteger("5000000") },
-            { new BigInteger("-7000"), new BigInteger("6000"), new BigInteger("6000") },
-            { new BigInteger("-8000"), new BigInteger("0"), new BigInteger("0") },
-            { new BigInteger("-9000"), new BigInteger("-7000"), new BigInteger("-7000") },
-            { new BigInteger("-10000"), new BigInteger("-8000000"), new BigInteger("-10000") },
+            { new BigInteger("-3").pow(21), new BigInteger("3").pow(100), new BigInteger("-3").pow(121) },
+            { new BigInteger("-3").pow(23), new BigInteger("3").pow(32), new BigInteger("-3").pow(55) },
+            { new BigInteger("-3").pow(27), new BigInteger("0"), new BigInteger("0") },
+            { new BigInteger("-3").pow(31), new BigInteger("-3").pow(39), new BigInteger("3").pow(70) },
+            { new BigInteger("-3").pow(33), new BigInteger("-3").pow(121), new BigInteger("3").pow(154) },
             // A = 0 and B = { Large Positive, Small Positive, 0, Small Negative, Large Negative }
-            { new BigInteger("0"), new BigInteger("9000000"), new BigInteger("9000000") },
-            { new BigInteger("0"), new BigInteger("10000"), new BigInteger("10000") },
+            { new BigInteger("0"), new BigInteger("5").pow(120), new BigInteger("0") },
+            { new BigInteger("0"), new BigInteger("5").pow(30), new BigInteger("0") },
             { new BigInteger("0"), new BigInteger("0"), new BigInteger("0") },
-            { new BigInteger("0"), new BigInteger("-11000"), new BigInteger("0") },
-            { new BigInteger("0"), new BigInteger("-12000000"), new BigInteger("0") },
+            { new BigInteger("0"), new BigInteger("-5").pow(30), new BigInteger("0") },
+            { new BigInteger("0"), new BigInteger("-5").pow(120), new BigInteger("0") },
             // A = Small Positive and B = { Large Positive, Small Positive, 0, Small Negative, Large Negative }
-            { new BigInteger("11000"), new BigInteger("13000000"), new BigInteger("13000000") },
-            { new BigInteger("12000"), new BigInteger("14000"), new BigInteger("14000") },
-            { new BigInteger("13000"), new BigInteger("0"), new BigInteger("13000") },
-            { new BigInteger("14000"), new BigInteger("-15000"), new BigInteger("14000") },
-            { new BigInteger("15000"), new BigInteger("-16000000"), new BigInteger("15000") },
+            { new BigInteger("7").pow(10), new BigInteger("7").pow(140), new BigInteger("7").pow(150) },
+            { new BigInteger("7").pow(15), new BigInteger("7").pow(20), new BigInteger("7").pow(35) },
+            { new BigInteger("7").pow(25), new BigInteger("0"), new BigInteger("0") },
+            { new BigInteger("7").pow(36), new BigInteger("-7").pow(31), new BigInteger("-7").pow(67) },
+            { new BigInteger("7").pow(40), new BigInteger("-7").pow(151), new BigInteger("-7").pow(191) },
             // A = Large Positive and B = { Large Positive, Small Positive, 0, Small Negative, Large Negative }
-            { new BigInteger("17000000"), new BigInteger("50000000"), new BigInteger("50000000") },
-            { new BigInteger("1800000"), new BigInteger("28000"), new BigInteger("1800000") },
-            { new BigInteger("19000000"), new BigInteger("0"), new BigInteger("19000000") },
-            { new BigInteger("30000000"), new BigInteger("-29000"), new BigInteger("30000000") },
-            { new BigInteger("40000000"), new BigInteger("-30000000"), new BigInteger("40000000") }
+            { new BigInteger("8").pow(120), new BigInteger("8").pow(100), new BigInteger("8").pow(220) },
+            { new BigInteger("8").pow(130), new BigInteger("8").pow(30), new BigInteger("8").pow(160) },
+            { new BigInteger("8").pow(140), new BigInteger("1"), new BigInteger("8").pow(140) },
+            { new BigInteger("8").pow(150), new BigInteger("0"), new BigInteger("0") },
+            { new BigInteger("8").pow(161), new BigInteger("-1"), new BigInteger("-8").pow(161) },
+            { new BigInteger("8").pow(170), new BigInteger("-8").pow(31), new BigInteger("-8").pow(201) },
+            { new BigInteger("8").pow(180), new BigInteger("-8").pow(101), new BigInteger("-8").pow(281) }
         });
     }
     // Esta prueba se ejecutara 25 veces
