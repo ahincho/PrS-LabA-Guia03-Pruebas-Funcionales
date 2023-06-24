@@ -36,8 +36,8 @@ public class MultiplyCheckerTest {
             { new BigInteger("-2").pow(71), new BigInteger("1"), new BigInteger("-2").pow(71) },
             { new BigInteger("-2").pow(81), new BigInteger("0"), new BigInteger("0") },
             { new BigInteger("-2").pow(91), new BigInteger("-1"), new BigInteger("2").pow(91) },
-            { new BigInteger("-2").pow(101), new BigInteger("-2").pow(21), new BigInteger("-2").pow(121) },
-            { new BigInteger("-2").pow(111), new BigInteger("-2").pow(61), new BigInteger("-2").pow(171) },
+            { new BigInteger("-2").pow(100), new BigInteger("-2").pow(21), new BigInteger("-2").pow(121) },
+            { new BigInteger("-2").pow(110), new BigInteger("-2").pow(61), new BigInteger("-2").pow(171) },
             // A = Small Negative and B = { Large Positive, Small Positive, 1, 0, -1, Small Negative, Large Negative }
             { new BigInteger("-3").pow(21), new BigInteger("3").pow(100), new BigInteger("-3").pow(121) },
             { new BigInteger("-3").pow(23), new BigInteger("3").pow(32), new BigInteger("-3").pow(55) },
